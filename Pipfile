@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+asyncio = "==3.4.3"
+future = "==0.18.3"
+mysql-connector-python = "==8.0.33"
+uncertainties = "==3.1.7"
+sklearn = "*"
+pandas = "*"
+streamlit = "*"
+seaborn = "*"
+
+[dev-packages]
+ipykernel = "*"
+
+[requires]
+python_version = "3.11"
