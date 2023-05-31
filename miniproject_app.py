@@ -87,7 +87,7 @@ st.subheader("To accommodate Scikit-Learn's limitation in creating a validation 
 st.latex(r'''test = \frac{validation}{train+test}.''')
 st.markdown("[Click here for origin of equation.](https://stackabuse.com/scikit-learns-traintestsplit-training-testing-and-validation-sets/)")
 
-st.subheader('Once the training, validation, and testing datasets were generated, we conducted a grid-search against the validation set using five different models: Linear Regression, Decision Tree, Random Forest, eXtreme Gradient Boosting (XGB), and Neural Networks. Among these models, Random Forest demonstrated the highest performance on the validation dataset.')
+st.subheader('Once the training, validation, and testing datasets were generated, we conducted a grid-search against the validation set using five different models: Linear Regression, Decision Tree, Random Forest, eXtreme Gradient Boosting (XGB), and Neural Networks. Among these models, XGB demonstrated the highest performance on the validation dataset.')
 
 st.image('./images/table_converter.pdf.png')
 
