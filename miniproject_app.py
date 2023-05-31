@@ -1,6 +1,8 @@
 import streamlit as st
 import seaborn as sns
 import pandas as pd
+import xgboost as xgb
+xgb_model = xgb.XGBRegressor()
 import matplotlib.pyplot as plt
 import pickle
 from sklearn.model_selection import train_test_split
@@ -23,7 +25,7 @@ def make_predictions(test_data):
     return prediction
 
 
-with open('./models/valid_predicition.pkl','rb') as valid_pred:
+with open('./models/valid_predicition_model.pkl','rb') as valid_pred:
     rf_valid_pred = pickle.load(valid_pred)
 
 rf_valid_pred=pd.Series(rf_valid_pred)
@@ -89,7 +91,7 @@ st.subheader('Once the training, validation, and testing datasets were generated
 
 st.image('./images/table_converter.pdf.png')
 
-st.subheader('Our objective is to visualize the comparison between the predicted values from the Random Forest, and the corresponding actual values from the validation dataset.')
+st.subheader('Our objective is to visualize the comparison between the predicted values from the XGB model, and the corresponding actual values from the validation dataset.')
 
 fig10, ax10 = plt.subplots()
 
@@ -103,7 +105,7 @@ ax10.set_ylabel('Count')
 ax10.legend(loc='best', frameon=False)
 st.pyplot(fig10)
 
-st.subheader('We now employ the pre-trained Random Forest regression model to generate predictions on the testing data. Feel free to use the sliders below to create your own custom predictions.')
+st.subheader('We now employ the pre-trained XGB regression model to generate predictions on the testing data. Feel free to use the sliders below to create your own custom predictions.')
 
 
 if __name__ == '__main__':
